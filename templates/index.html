@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="content-container">
+    {% if current_user.is_authenticated %}
+    <h1 class="welcome-message">Bem-vindo, {{ current_user.username }}!</h1>
+    <a href="{{ url_for('audits') }}" class="btn btn-info">Ir para o Painel de Logs</a>
+    <a href="{{ url_for('ask') }}" class="btn btn-success">Ir para o Painel do Gemini</a> <!-- Novo botão -->
+    {% else %}
+    <h1 class="welcome-message">Bem-vindo!</h1>
+    <p class="intro-text">Por favor <a href="{{ url_for('register') }}" class="btn btn-primary">Registar</a> ou <a href="{{ url_for('login') }}" class="btn btn-secondary">Entrar</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container mt-5">
+    <!-- Botão para a página inicial -->
+    <a href="/" class="btn btn-secondary mb-4">Voltar à Página Inicial</a>
+
+    <h2 class="mb-4">Em que posso ajudar?</h2>
+    <form method="POST" action="{{ url_for('ask') }}">
+        <div class="form-group">
+            <label for="question" class="font-weight-bold">Faça uma pergunta:</label>
+            <input type="text" id="question" name="question" class="form-control" placeholder="Digite sua pergunta" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Perguntar</button>
+    </form>
+
+    {% if answer %}
+    <div class="mt-4">
+        <h3 class="font-weight-bold">Resposta:</h3>
+        <p>{{ answer }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
