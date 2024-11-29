@@ -28,7 +28,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:/
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Configuração do Google Gemini
-GOOGLE_GEMINI_API_KEY = 'AIzaSyDMVkAOjI6zrbYSnKRg7MFB918TaJ4Qrec'
+GOOGLE_GEMINI_API_KEY = 'INSIRA SUA CHAVE DE API AQUI'
 if not GOOGLE_GEMINI_API_KEY:
     raise ValueError("A chave API não está definida. Defina 'GOOGLE_GEMINI_API_KEY' corretamente.")
 lua.configure(api_key=GOOGLE_GEMINI_API_KEY)
